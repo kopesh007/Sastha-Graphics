@@ -1,0 +1,80 @@
+==========================================================
+HOW TO CONNECT YOUR PROJECT TO GITHUB (STEP-BY-STEP)
+==========================================================
+
+Since you want to safely store your code on GitHub, follow this guide exactly.
+
+STEP 1: CREATE A NEW REPOSITORY (PROJECT) ON GITHUB
+----------------------------------------------------------
+1. Go to your browser and log in to https://github.com.
+2. In the top-right corner, click the "+" icon and select "New repository".
+3. Give your repository a name (e.g., "sastha-graphics-webapp").
+4. You can make it Public or Private.
+5. IMPORTANT: DO NOT check the box that says "Add a README file". Leave the repository completely empty.
+6. Click the green "Create repository" button.
+
+
+STEP 2: COPY YOUR GITHUB URL
+----------------------------------------------------------
+Once the repository is created, GitHub will show you a page with setup instructions. 
+Look for a web address ending in `.git` and copy it. It will look something like this:
+https://github.com/YourUsername/sastha-graphics-webapp.git
+
+
+STEP 3: TURN YOUR LOCAL FOLDER INTO A GIT PROJECT
+----------------------------------------------------------
+Open the terminal in VS Code (make sure you are inside your K:\SASTHA\web_app folder) and run:
+
+    git init
+
+(What it does: This initializes an empty invisible folder called `.git` inside your web_app tracking your code.)
+
+
+STEP 4: CONNECT YOUR FOLDER TO THE GITHUB URL
+----------------------------------------------------------
+Now, tell your local folder where to send the code on the internet. Run this command (replace the URL with the one you copied in Step 2):
+
+    git remote add origin https://github.com/YourUsername/sastha-graphics-webapp.git
+
+----------------------------------------------------------
+==========================================================
+THE 3-STEP PROCESS TO UPLOAD YOUR CODE (ADD, COMMIT, PUSH)
+==========================================================
+
+Whenever you change your code (like you just did by creating base.html and index.html), you MUST run these 3 commands in order to save it to GitHub:
+
+1. HOW TO ADD
+-------------
+Command to run:
+    git add .
+
+What it does: The `.` (dot) means "everything". This tells Git, "Get all my new and modified files ready to be saved."
+
+2. HOW TO COMMIT
+----------------
+Command to run:
+    git commit -m "Created Django views, templates and styling"
+
+What it does: A commit is like taking a snapshot or hitting 'Save' in a video game. The `-m` stands for message. You should always type a short message inside the quotes describing what kind of code you just wrote.
+
+3. HOW TO PUSH
+--------------
+Command to run:
+    git push -u origin main
+
+What it does: This is the command that actually UPLOADS your code to the GitHub website. 
+*(Note: If Git gives you an error saying the 'main' branch doesn't exist, your default branch might be called 'master'. If so, just run: `git push -u origin master`)*
+
+----------------------------------------------------------
+==========================================================
+HOW TO DOWNLOAD UPDATES (PULL)
+==========================================================
+
+If you edited code directly on the GitHub website, or if you are working on a different laptop, you need to download the latest code to your computer.
+
+HOW TO PULL
+-----------
+Command to run:
+    git pull origin main
+
+What it does: "Pulls" (downloads) any new changes from GitHub and updates your local files instantly.

@@ -1,0 +1,206 @@
+/* Import Modern Google Fonts: 
+   'Outfit' for bold headings, 'Inter' for clean paragraph text */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700;800&display=swap');
+
+/* Main Color Variables */
+:root {
+  --primary-color: #d4af37; /* Premium Traditional Gold */
+  --secondary-color: #800020; /* Deep Tamil Maroon/Burgundy */
+  --bg-dark: #0f0f11;
+  --bg-card: rgba(25, 25, 28, 0.7);
+  --text-light: #f5f5f7;
+  --text-muted: #a1a1aa;
+}
+
+/* Reset basic browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 20px 0;
+}
+
+/* --- NAVIGATION BAR --- */
+nav {
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 15, 17, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+nav h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* --- HERO SECTION (Welcome) --- */
+header#home {
+  text-align: center;
+  padding: 8rem 5%;
+  background: linear-gradient(135deg, rgba(15,15,17,0.95) 0%, rgba(128,0,32,0.6) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header#home h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header#home p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+button {
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* --- SERVICES SECTION --- */
+#services {
+  padding: 5rem 5%;
+  text-align: center;
+}
+
+#services > h2 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+#services > p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+/* Responsive Grid for Services */
+#services > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+#services > div > div {
+  background: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+  text-align: left;
+}
+
+#services > div > div:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+}
+
+#services > div > div h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+#services > div > div p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- ABOUT SECTION --- */
+#about {
+  padding: 6rem 5%;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(128,0,32,0.1) 100%);
+}
+
+#about h2 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+#about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-light);
+}
+
+#about strong {
+  color: var(--primary-color);
+}
+
+/* --- FOOTER --- */
+footer {
+  padding: 3rem 5%;
+  text-align: center;
+  background: #080809;
+}
+
+footer h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
