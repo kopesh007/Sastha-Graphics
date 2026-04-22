@@ -9,4 +9,5 @@ urlpatterns=[
     path("banner/",views.banner_page,name="banner"),
     path("invite/",views.invites,name="invitations"),
     path("art/",views.arts,name="arts"),
+    path("explore/",views.explore,name="explore"),
 ]

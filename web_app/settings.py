@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k%-+i(6e3g47)r(bwxzitl2ya(4&1rzt)$@nti)oyrqh1@55is'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'web_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'web_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':"sastha",
+        'USER':'root',
+        'PASSWORD':'kopeshdb',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
 
@@ -117,5 +121,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[
-    "web_app/website/static/"
+    BASE_DIR/"website"/"static"
 ]
+STATIC_ROOT= 'staticfiles'

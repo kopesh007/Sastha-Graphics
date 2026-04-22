@@ -16,41 +16,23 @@
         <h2 class="section-title">✨ Premium Banners</h2>
         <p class="section-subtitle">Make your events unforgettable with our grand banner designs.</p>
         
+        
+
         <div class="portfolio-grid">
+            {% for i in banners%}
             <!-- 1. Marriage Banners -->
             <div class="portfolio-card">
                 <!-- A pure CSS gradient block that you can later replace with real <img> tags! -->
                 <div class="card-image-placeholder">
-                    <img src="{% static 'images/wedding.jpeg'%}" alt="WEdding images">
+                    <img src="{% static 'images/'%}{{i.imageurl}}" alt="WEdding images">
                 </div>
                 <div class="portfolio-content">
-                    <h3>Marriage Banners</h3>
-                    <p>Traditional and modern wedding banners with exquisite Tamil fonts and beautiful couple portraits.</p>
+                    <h3>{{i.name}}</h3>
+                    <p>{{i.content}}</p>
                 </div>
             </div>
+            {% endfor %}
 
-            <!-- 2. Cultural Banners -->
-            <div class="portfolio-card">
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/cultural.jpeg'%}" alt="Cultural images">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Cultural Banners</h3>
-                    <p>Vibrant and energetic banners for temple festivals, Pongal celebrations, and grand grand cultural events.</p>
-                </div>
-            </div>
-
-            <!-- 3. Politics Banners -->
-            <div class="portfolio-card">
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/politics.jpeg'%}" alt="Politics Images">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Politics Banners</h3>
-                    <p>High-energy, bold, and powerful political banners designed to honor leaders and capture the crowd's attention.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- ================= POSTERS CATEGORY ================= -->
@@ -59,38 +41,20 @@
         <p class="section-subtitle">Stunning poster artwork for promotions and announcements.</p>
 
         <div class="portfolio-grid">
+            {% for j in posters %}
             <!-- 1. Movie / Album Posters -->
             <div class="portfolio-card">
                 <div class="card-image-placeholder">
-                    <img src="{% static 'images/movie.jpeg' %}" alt="Movie Posters">
+                    <img src="{% static 'images/' %}{{j.imageurl}}" alt="Movie Posters">
                 </div>
                 <div class="portfolio-content">
-                    <h3>Movie & Album Posters</h3>
-                    <p>Cinematic, dramatic designs perfect for short films, music albums, and YouTube video thumbnails.</p>
+                    <h3>{{j.name}}</h3>
+                    <p>{{j.content}}</p>
                 </div>
             </div>
+            {% endfor %}
 
-            <!-- 2. Event Posters -->
-            <div class="portfolio-card">
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/event.jpeg' %}" alt="Event images">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Event Announcements</h3>
-                    <p>Eye-catching posters for shop openings, school functions, and special community ceremonies.</p>
-                </div>
-            </div>
-
-            <!-- 3. Business Posters -->
-            <div class="portfolio-card">
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/buss.jpeg' %}" alt="Business images">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Business Promotions</h3>
-                    <p>Clean, professional advertising posters to grow your local business and reach your target customers.</p>
-                </div>
-            </div>
+            
         </div>
     </section>
 
