@@ -10,28 +10,14 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav>
-        <h2>Sastha Designs</h2>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#services">Our Services</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
+     {% include 'include/head.html' %}
+  
     {% block content%}
     {% endblock %}
     
    
 
-     <!-- FOOTER -->
-    <footer id="contact">
-        <h3>Sastha Designs</h3>
-        <p>Serving the Tamil community with love and creativity.</p>
-        <p>Email: contact@sasthadesigns.com | Phone: +91 XXXXX XXXXX</p>
-        <p>&copy; 2026 Sastha Designs. All Rights Reserved.</p>
-    </footer>
+    {% include 'include/foot.html' %}
 
 </body>
 </html>

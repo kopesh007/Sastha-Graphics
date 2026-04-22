@@ -4,8 +4,10 @@
 
 /* Main Color Variables */
 :root {
-  --primary-color: #d4af37; /* Premium Traditional Gold */
-  --secondary-color: #800020; /* Deep Tamil Maroon/Burgundy */
+  --primary-color: #d4af37;
+  /* Premium Traditional Gold */
+  --secondary-color: #800020;
+  /* Deep Tamil Maroon/Burgundy */
   --bg-dark: #0f0f11;
   --bg-card: rgba(25, 25, 28, 0.7);
   --text-light: #f5f5f7;
@@ -26,7 +28,10 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.5px;
 }
@@ -74,7 +79,7 @@ nav ul li a:hover {
 header#home {
   text-align: center;
   padding: 8rem 5%;
-  background: linear-gradient(135deg, rgba(15,15,17,0.95) 0%, rgba(128,0,32,0.6) 100%);
+  background: linear-gradient(135deg, rgba(15, 15, 17, 0.95) 0%, rgba(128, 0, 32, 0.6) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -89,7 +94,7 @@ header#home h1 {
 header#home p {
   font-size: 1.25rem;
   color: var(--text-muted);
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto 2.5rem;
 }
 
@@ -116,27 +121,27 @@ button:hover {
   text-align: center;
 }
 
-#services > h2 {
+#services>h2 {
   font-size: 2.8rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
-#services > p {
+#services>p {
   color: var(--text-muted);
   font-size: 1.1rem;
   margin-bottom: 3rem;
 }
 
 /* Responsive Grid for Services */
-#services > div {
+#services>div {
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
   justify-content: center;
 }
 
-#services > div > div {
+#services>div>a {
   background: var(--bg-card);
   padding: 2.5rem;
   border-radius: 16px;
@@ -144,20 +149,22 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.4s ease, border-color 0.4s ease;
   text-align: left;
+  text-decoration: none;
+  display: block;
 }
 
-#services > div > div:hover {
+#services>div>a:hover {
   transform: translateY(-10px);
   border-color: var(--primary-color);
 }
 
-#services > div > div h3 {
+#services>div>a h3 {
   font-size: 1.5rem;
   color: #fff;
   margin-bottom: 1rem;
 }
 
-#services > div > div p {
+#services>div>a p {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
@@ -166,7 +173,7 @@ button:hover {
 #about {
   padding: 6rem 5%;
   text-align: center;
-  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(128,0,32,0.1) 100%);
+  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(128, 0, 32, 0.1) 100%);
 }
 
 #about h2 {
@@ -203,4 +210,319 @@ footer h3 {
 footer p {
   color: var(--text-muted);
   margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   ABOUT PAGE SPECIFIC STYLES 
+   ========================================= */
+
+#about-hero {
+  text-align: center;
+  padding: 6rem 5%;
+  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#about-hero h1 {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+#about-hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+#about-details {
+  padding: 5rem 5%;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.about-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 300px;
+}
+
+/* Glowing Gold Stat Boxes */
+.stat-box {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--primary-color);
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+  transition: transform 0.4s;
+}
+
+.stat-box:hover {
+  transform: scale(1.03);
+}
+
+.stat-box h3 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-box p {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Core Values Section */
+#values {
+  padding: 5rem 5%;
+  text-align: center;
+  background: #080809;
+}
+
+#values h2 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.values-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.value-card {
+  background: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 400px;
+  transition: transform 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+}
+
+.value-card h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  color: var(--text-muted);
+}
+
+/* =========================================
+   BANNERS & POSTERS PAGE STYLES 
+   ========================================= */
+
+#services-hero {
+  text-align: center;
+  padding: 6rem 5%;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(128, 0, 32, 0.4) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#services-hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+#services-hero p {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.portfolio-container {
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-section {
+  margin-bottom: 6rem;
+}
+
+.portfolio-section h2.section-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.portfolio-section p.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.portfolio-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s, box-shadow 0.4s;
+  cursor: pointer;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(128, 0, 32, 0.3);
+  border-color: var(--secondary-color);
+}
+
+/* Beautiful Color Gradients acting as Image Placeholders! */
+.card-image-placeholder {
+  height: 200px;
+  width: 100%;
+}
+
+.banner-marriage {
+  background: linear-gradient(45deg, #FF512F, #DD2476);
+}
+
+.banner-cultural {
+  background: linear-gradient(45deg, #f12711, #f5af19);
+}
+
+.banner-politics {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+}
+
+.poster-movie {
+  background: linear-gradient(45deg, #8E2DE2, #4A00E0);
+}
+
+.poster-event {
+  background: linear-gradient(45deg, #00B4DB, #0083B0);
+}
+
+.poster-business {
+  background: linear-gradient(45deg, #4b6cb7, #182848);
+}
+
+.portfolio-content {
+  padding: 1.5rem;
+}
+
+.portfolio-content h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.portfolio-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Makes sure images perfectly fill the placeholder bounds */
+.card-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   INVITATIONS PAGE STYLES 
+   ========================================= */
+
+#invitations-hero {
+  text-align: center;
+  padding: 6rem 5%;
+  /* Using a gold royalty gradient for invitations */
+  background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(212, 175, 55, 0.3) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#invitations-hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+#invitations-hero p {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Temporary colorful gradients for invitations before you upload images */
+.invite-wedding {
+  background: linear-gradient(45deg, #f7b733, #fc4a1a);
+}
+
+.invite-house {
+  background: linear-gradient(45deg, #56ab2f, #a8e063);
+}
+
+.invite-ceremony {
+  background: linear-gradient(45deg, #F09819, #EDDE5D);
+}
+
+
+/* =========================================
+   DIGITAL ART PAGE STYLES 
+   ========================================= */
+
+#digital-hero {
+  text-align: center;
+  padding: 6rem 5%;
+  /* A vibrant magical gradient for digital art */
+  background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(138, 43, 226, 0.25) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#digital-hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+#digital-hero p {
+  color: #a87ffb;
+  /* A beautiful premium digital purple */
+  font-size: 1.2rem;
+  font-weight: 600;
 }
