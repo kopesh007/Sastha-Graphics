@@ -10,4 +10,5 @@ urlpatterns=[
     path("invite/",views.invites,name="invitations"),
     path("art/",views.arts,name="arts"),
     path("explore/",views.explore,name="explore"),
+    path("contact/",views.contact,name="contact"),
 ]

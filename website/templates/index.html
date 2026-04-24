@@ -6,41 +6,35 @@
         <h1>Sastha Graphics & Designs</h1>
         <p>உங்கள் நிகழ்வுகளை சிறப்பாக மாற்றும் பிரீமியம் டிசைன் உலகம்</p>
         <p>பேனர்கள் | போஸ்டர்கள் | அழைப்பிதழ்கள் — நவீன ஸ்டைலும் தமிழ் பாரம்பரியமும் ஒன்றாக</p>
-        <a href="{% url 'website:explore' %}">
-        <button style="padding: 10px 20px; font-weight: bold;" >Explore Designs</button></a>
+        <div class="hero-cta">
+            <a href="{% url 'website:explore' %}" class="btn">Explore Designs</a>
+        </div>
     </header>
-
-    <br><br>
 
     <!-- WHAT WE PROVIDE (SERVICES) SECTION -->
     <section id="services">
-        <h2>What We Provide</h2>
+        <h2>Our Services</h2>
         <p>Exquisite design solutions tailored for celebrations, events, and businesses.</p>
         
         <div>
             <!-- Service 1 -->
-             
-            <a href="banner">
+            <a href="{% url 'website:banner' %}" class="fade-up">
                 <h3>Banners & Posters</h3>
                 <p>High-impact, vibrant banners and posters designed for festivals, cultural ceremonies, and promotions.</p>
             </a>
 
             <!-- Service 2 -->
-            <a href="invite">
+            <a href="{% url 'website:invitations' %}" class="fade-up" style="animation-delay: 0.1s;">
                 <h3>Invitation Cards</h3>
                 <p>Luxurious and traditional Tamil invitation cards designed for weddings, ear-piercing ceremonies, and housewarmings.</p>
             </a>
 
             <!-- Service 3 -->
-            <a href="art">
+            <a href="{% url 'website:arts' %}" class="fade-up" style="animation-delay: 0.2s;">
                 <h3>Digital Cultural Art</h3>
                 <p>Custom digital illustrations with kolam patterns and traditional Tamil typography for social media and prints.</p>
             </a>
         </div>
     </section>
-
-
-
-    <br><br><hr>
 
 {% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<header class="page-hero">
+    <span class="page-hero-tag">Get in Touch</span>
+    <h1>Contact Us</h1>
+    <p>Let's discuss your next big design project.</p>
+</header>
+
+<div class="contact-wrapper">
+    <!-- LEFT: CONTACT FORM -->
+    <div class="contact-form-card fade-up">
+        <h2>Send a Message</h2>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" placeholder="John Doe" name="name" value="{{n_value|default_if_none:''}}">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Your Email</label>
+                <input type="email" class="form-input" placeholder="john@example.com" name="email" value="{{e_value|default_if_none:''}}">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Tell us about your project</label>
+                <textarea class="form-input" rows="5" placeholder="I need a beautiful wedding invitation..." name="interest">{{m_value|default_if_none:''}}</textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+        </form>
+    </div>
+
+    <!-- RIGHT: CONTACT INFO -->
+    <div class="contact-info">
+        <div class="info-card fade-up" style="animation-delay: 0.1s;">
+            <h4>📍 Address</h4>
+            <p>123 Graphic Street, Design City, Tamil Nadu</p>
+        </div>
+        
+        <div class="info-card whatsapp-card fade-up" style="animation-delay: 0.2s;">
+            <h4>📱 WhatsApp</h4>
+            <p>+91 63808 04311</p>
+            <a href="https://wa.me/6380804311" target="_blank" style="text-decoration: none;">
+                <span class="btn whatsapp-btn">Chat Now</span>
+            </a>
+        </div>
+
+        <div class="info-card fade-up" style="animation-delay: 0.3s;">
+            <h4>📧 Email</h4>
+            <p>contact@sasthadesigns.com</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,56 +1,30 @@
 {% extends 'base.html' %}
-{% load static %}
-
 {% block content %}
-<!-- PAGE HERO -->
-<header id="invitations-hero">
+
+<header class="page-hero">
+    <span class="page-hero-tag">Auspicious</span>
     <h1>Invitation Cards</h1>
     <p>Elegant, traditional, and deeply cultural invitations for your sacred ceremonies.</p>
 </header>
 
 <div class="portfolio-container">
     
-    <!-- ================= INVITATIONS CATEGORY ================= -->
     <section class="portfolio-section">
         <h2 class="section-title">✨ Traditional & Modern Invitations</h2>
         <p class="section-subtitle">Start your celebrations with the perfect invitation card.</p>
         
         <div class="portfolio-grid">
-            <!-- 1. Wedding Invitations -->
-            <div class="portfolio-card">
-                <!-- Replace this gradient div with your image tag later! -->
+            {% for i in data %}
+            <div class="portfolio-card fade-up" style="animation-delay: 0.{{ forloop.counter0 }}s;">
                 <div class="card-image-placeholder">
-                    <img src="{% static 'images/muhurtham.jpeg' %}" alt="muhurtham images">
+                    <img src="/media/{{i.imageurl}}" alt="{{ i.name }}">
                 </div>
                 <div class="portfolio-content">
-                    <h3>Wedding & Muhurtham</h3>
-                    <p>Luxurious gold-foiled, deeply traditional Tamil wedding cards featuring elegant deity motifs like Lord Ganesha.</p>
+                    <h3>{{i.name}}</h3>
+                    <p>{{i.content}}</p>
                 </div>
             </div>
-
-            <!-- 2. Housewarming Invitations -->
-            <div class="portfolio-card">
-                <!-- Replace with image tag later! -->
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/house.jpeg' %}" alt="HouseWorming Party">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Gruhapravesam (Housewarming)</h3>
-                    <p>Warm and welcoming cards for your new home ceremony, blending modern style with classic aesthetics.</p>
-                </div>
-            </div>
-
-            <!-- 3. Special Ceremonies -->
-            <div class="portfolio-card">
-                 <!-- Replace with image tag later! -->
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/manjal.jpeg'%}" alt="Manjal Neerttu ">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Kadhukuthu & Manjal Neerattu</h3>
-                    <p>Beautiful, colorful designs specifically crafted for ear-piercing and coming-of-age cultural ceremonies.</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 

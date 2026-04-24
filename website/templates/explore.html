@@ -1,135 +1,33 @@
 {% extends 'base.html' %}
-{% load static %}
-
 {% block content %}
-<!-- Customize ONLY the Explore Page to fit everything neatly on the screen -->
-<style>
-    /* 1. Reduce the massive paddings so it doesn't take up the whole screen */
-    #explore-main-hero { 
-        text-align: center;
-        padding: 4rem 5%;
-        background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(128, 0, 32, 0.4) 100%);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    #explore-main-hero h1 { font-size: 3rem; color: #fff; margin-bottom: 0.5rem; }
-    #explore-main-hero p { color: var(--primary-color); font-size: 1.1rem; }
 
-    /* 2. Make the container wider and reduce margins */
-    .explore-container { padding: 2rem 5%; max-width: 1400px; margin: 0 auto; }
-    .explore-section { margin-bottom: 4rem; }
-    
-    /* 3. Make cards slightly more compact so they fit better side-by-side */
-    .explore-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-
-    /* 4. Sub-headers to act as inline dividers instead of screen-filling banners */
-    .explore-divider {
-        padding: 2rem 0 1.5rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        margin-bottom: 2rem;
-    }
-    .explore-divider h1 { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
-    .explore-divider p { color: var(--text-muted); font-size: 1rem; }
-</style>
-
-<header id="explore-main-hero">
-    <h1>Explore Our Full Portfolio</h1>
-    <p>Discover Banners, Posters, Invitations, and Digital Arts all in one place.</p>
+<header class="explore-hero">
+    <span class="page-hero-tag">All Works</span>
+    <h1>Explore Our Creations</h1>
+    <p>A complete showcase of our premium designs, all in one place.</p>
 </header>
 
-<div class="explore-container">
+<div class="portfolio-container" style="padding-top: 2rem;">
+    {% regroup data by topic as categorized_data %}
     
-    <!-- ================= BANNERS & POSTERS ================= -->
-    <div class="explore-divider">
-        <h1>Banners & Posters</h1>
-        <p>High-impact, vibrant banners and professional announcements.</p>
-    </div>
-
-    <section class="explore-section">
-        <h2 class="section-title">✨ Premium Banners</h2>
-        <div class="explore-grid">
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/wedding.jpeg'%}" alt="Wedding images"></div>
-                <div class="portfolio-content"><h3>Marriage Banners</h3></div>
+    {% for category in categorized_data %}
+        <section class="portfolio-section">
+            <h2 class="section-title" style="text-transform: capitalize;">✨ {{ category.grouper }}s</h2>
+            <div class="explore-grid" style="padding: 2rem 0 5rem 0;">
+                {% for i in category.list %}
+                <div class="portfolio-card fade-up" style="animation-delay: 0.{{ forloop.counter0 }}s;">
+                    <div class="card-image-placeholder">
+                        <img src="/media/{{i.imageurl}}" alt="{{ i.name }}">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>{{i.name}}</h3>
+                        <p>{{i.content}}</p>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/cultural.jpeg'%}" alt="Cultural images"></div>
-                <div class="portfolio-content"><h3>Cultural Banners</h3></div>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/politics.jpeg'%}" alt="Politics Images"></div>
-                <div class="portfolio-content"><h3>Politics Banners</h3></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="explore-section">
-        <h2 class="section-title">✨ Professional Posters</h2>
-        <div class="explore-grid">
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/movie.jpeg' %}" alt="Movie Posters"></div>
-                <div class="portfolio-content"><h3>Movie & Album Posters</h3></div>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/event.jpeg' %}" alt="Event images"></div>
-                <div class="portfolio-content"><h3>Event Announcements</h3></div>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/buss.jpeg' %}" alt="Business images"></div>
-                <div class="portfolio-content"><h3>Business Promotions</h3></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= INVITATIONS ================= -->
-    <div class="explore-divider">
-        <h1>Invitation Cards</h1>
-        <p>Elegant, traditional, and deeply cultural invitations for your sacred ceremonies.</p>
-    </div>
-
-    <section class="explore-section">
-        <div class="explore-grid">
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/muhurtham.jpeg' %}" alt="muhurtham images"></div>
-                <div class="portfolio-content"><h3>Wedding & Muhurtham</h3></div>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/house.jpeg' %}" alt="HouseWorming Party"></div>
-                <div class="portfolio-content"><h3>Gruhapravesam (Housewarming)</h3></div>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/manjal.jpeg'%}" alt="Manjal Neerttu"></div>
-                <div class="portfolio-content"><h3>Kadhukuthu & Manjal Neerattu</h3></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= DIGITAL ART ================= -->
-    <div class="explore-divider">
-        <h1>Digital Cultural Art</h1>
-        <p>Bringing our ancient Tamil heritage into the vibrant digital world.</p>
-    </div>
-
-    <section class="explore-section">
-        <div class="explore-grid">
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/digital_art.jpeg' %}" alt="Digital Arts"></div>
-                <div class="portfolio-content"><h3>Digital Arts and Oil Paintings</h3></div>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/tamil_typo.jpeg' %}" alt="Tamil Typography"></div>
-                <div class="portfolio-content"><h3>Tamil Typography</h3></div>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image-placeholder"><img src="{% static 'images/resume.jpeg' %}" alt="Resume Image"></div>
-                <div class="portfolio-content"><h3>Resume & Patterns</h3></div>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    {% endfor %}
 </div>
 
 {% endblock %}

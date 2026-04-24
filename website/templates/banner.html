@@ -1,10 +1,8 @@
-
 {% extends 'base.html' %}
-{% load static %}
-
 {% block content %}
-<!-- PAGE HERO -->
-<header id="services-hero">
+
+<header class="page-hero">
+    <span class="page-hero-tag">Portfolio</span>
     <h1>Banners & Posters</h1>
     <p>Discover our specialized collections created for your unique needs.</p>
 </header>
@@ -16,15 +14,11 @@
         <h2 class="section-title">✨ Premium Banners</h2>
         <p class="section-subtitle">Make your events unforgettable with our grand banner designs.</p>
         
-        
-
         <div class="portfolio-grid">
-            {% for i in banners%}
-            <!-- 1. Marriage Banners -->
-            <div class="portfolio-card">
-                <!-- A pure CSS gradient block that you can later replace with real <img> tags! -->
+            {% for i in banners %}
+            <div class="portfolio-card fade-up" style="animation-delay: 0.{{ forloop.counter0 }}s;">
                 <div class="card-image-placeholder">
-                    <img src="{% static 'images/'%}{{i.imageurl}}" alt="WEdding images">
+                    <img src="/media/{{i.imageurl}}" alt="{{ i.name }}">
                 </div>
                 <div class="portfolio-content">
                     <h3>{{i.name}}</h3>
@@ -32,7 +26,7 @@
                 </div>
             </div>
             {% endfor %}
-
+        </div>
     </section>
 
     <!-- ================= POSTERS CATEGORY ================= -->
@@ -42,10 +36,9 @@
 
         <div class="portfolio-grid">
             {% for j in posters %}
-            <!-- 1. Movie / Album Posters -->
-            <div class="portfolio-card">
+            <div class="portfolio-card fade-up" style="animation-delay: 0.{{ forloop.counter0 }}s;">
                 <div class="card-image-placeholder">
-                    <img src="{% static 'images/' %}{{j.imageurl}}" alt="Movie Posters">
+                    <img src="/media/{{j.imageurl}}" alt="{{ j.name }}">
                 </div>
                 <div class="portfolio-content">
                     <h3>{{j.name}}</h3>
@@ -53,8 +46,6 @@
                 </div>
             </div>
             {% endfor %}
-
-            
         </div>
     </section>
 

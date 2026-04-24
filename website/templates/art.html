@@ -1,57 +1,30 @@
 {% extends 'base.html' %}
-{% load static %}
-
 {% block content %}
-<!-- PAGE HERO -->
-<header id="digital-hero">
+
+<header class="page-hero">
+    <span class="page-hero-tag">Creativity</span>
     <h1>Digital Cultural Art</h1>
     <p>Bringing our ancient Tamil heritage into the vibrant digital world.</p>
 </header>
 
 <div class="portfolio-container">
     
-    <!-- ================= DIGITAL ART CATEGORY ================= -->
     <section class="portfolio-section">
         <h2 class="section-title">✨ Digital Illustrations & Typography</h2>
         <p class="section-subtitle">Custom artworks crafted for social media, digital prints, and branding.</p>
         
         <div class="portfolio-grid">
-            <!-- 1. Custom Illustrations -->
-            <div class="portfolio-card">
-                 <!-- Make sure to replace this placeholder div completely with your <img ...> tags just like you did! -->
+            {% for i in data %}
+            <div class="portfolio-card fade-up" style="animation-delay: 0.{{ forloop.counter0 }}s;">
                 <div class="card-image-placeholder">
-                    <!-- Example: <img src="{% static 'images/illustration.jpeg' %}" alt="Illustration"> -->
-                     <img src="{% static 'images/digital_art.jpeg' %}" alt="Digital Arts">
+                    <img src="/media/{{i.imageurl}}" alt="{{ i.name }}">
                 </div>
                 <div class="portfolio-content">
-                    <h3>Digital Arts and Oil Paintings</h3>
-                    <p>Beautiful digital paintings and portraits mixing classic South Indian styles with modern digital brushes.</p>
+                    <h3>{{i.name}}</h3>
+                    <p>{{i.content}}</p>
                 </div>
             </div>
-
-            <!-- 2. Typography Art -->
-            <div class="portfolio-card">
-                 <!-- Replace with image tag -->
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/tamil_typo.jpeg' %}" alt="Tamil Typography">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Tamil Typography</h3>
-                    <p>Stylized Tamil letters, poetry quotes, and names perfectly designed for logos, t-shirts, and social media.</p>
-                </div>
-            </div>
-
-            <!-- 3. Kolam & Patterns -->
-            <div class="portfolio-card">
-                 <!-- Replace with image tag -->
-                <div class="card-image-placeholder">
-                    <img src="{% static 'images/resume.jpeg' %}" alt="Resume Image">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Resume & Patterns</h3>
-                    <p>Intricate digital Kolam designs and floral patterns perfect for modern world job applications and  promotions.</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 

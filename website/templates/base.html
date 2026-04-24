@@ -4,20 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sastha Designs | Cultural & Modern Design Studio</title>
+    <title>Sastha Designs | Premium Cultural Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-
-    <!-- NAVBAR -->
-     {% include 'include/head.html' %}
-  
-    {% block content%}
-    {% endblock %}
-    
-   
-
+    {% include 'include/head.html' %}
+    {% block content %}{% endblock %}
     {% include 'include/foot.html' %}
-
 </body>
 </html>
