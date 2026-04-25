@@ -25,7 +25,7 @@ def arts(request):
     return render(request,"art.html",{"data":data})
 
 def explore(request):
-    data=store_data.objects.all()
+    data=store_data.objects.all().order_by('topic')  #  here, data is a list
     return render(request,"explore.html",{"data":data})
 
 
@@ -34,11 +34,12 @@ def contact(request):
     if request.method=="POST":
         data=ContactForm(request.POST)
         if data.is_valid():
+            print(data)
             print(data.cleaned_data["name"])
         else:
             name=request.POST["name"]
             email=request.POST["email"]
             message=request.POST["interest"]
-            return render(request,"contact.html",{"n_value":name,"e_value":email,"m_value":message})
+            return render(request,"contact.html",{"n_value":name,"e_value":email,"m_value":message,"error":""})
     return render(request,"contact.html")
 # Create your views here.
