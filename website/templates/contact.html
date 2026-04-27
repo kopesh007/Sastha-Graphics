@@ -5,13 +5,29 @@
     <span class="page-hero-tag">Get in Touch</span>
     <h1>Contact Us</h1>
     <p>Let's discuss your next big design project.</p>
+    
+        {% for field in data %}
+            {% if field.errors %}
+            <div class="info-card success-card fade-up" style="animation-delay: 0.4s;">
+            <div class="error-container">
+                <div class="error-line">
+                    <strong>{{field.label}}:</strong> 
+                    {% for error in field.errors %}
+                        <span class="error-msg">{{error}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+            {% endif %}
+        {% endfor %}
+    
 </header>
 
 <div class="contact-wrapper">
     <!-- LEFT: CONTACT FORM -->
     <div class="contact-form-card fade-up">
         <h2>Send a Message</h2>
-        <form action="#" method="post">
+        <form method="post">
             {% csrf_token %}
             <div class="form-group">
                 <label class="form-label">Your Name</label>
@@ -20,6 +36,10 @@
             <div class="form-group">
                 <label class="form-label">Your Email</label>
                 <input type="email" class="form-input" placeholder="john@example.com" name="email" value="{{e_value|default_if_none:''}}">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Contact Number</label>
+                <input type="text" class="form-input" placeholder="Number" name="number" value="{{nu_value|default_if_none:''}}">
             </div>
             <div class="form-group">
                 <label class="form-label">Tell us about your project</label>
@@ -48,6 +68,11 @@
             <h4>📧 Email</h4>
             <p>contact@sasthadesigns.com</p>
         </div>
+        {% if message %}
+        <div class="info-card success-card fade-up" style="animation-delay: 0.4s;">
+            <h3 class="success-text">✨ {{message}}</h3>
+        </div>
+        {% endif %}
     </div>
 </div>
 

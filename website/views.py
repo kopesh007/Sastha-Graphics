@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse 
-from website.models import store_data
+from website.models import store_data,user_data
 from website.form import ContactForm
 
 def home(request):
@@ -34,12 +34,22 @@ def contact(request):
     if request.method=="POST":
         data=ContactForm(request.POST)
         if data.is_valid():
-            print(data)
-            print(data.cleaned_data["name"])
+            user_data.objects.create(
+                name=data.cleaned_data['name'],
+                email=data.cleaned_data['email'],
+                contact=data.cleaned_data['number'],
+                message=data.cleaned_data['interest']
+            )
+            msg="Data Has Been Submitted"
+            return render(request,"contact.html",{"message":msg})   
         else:
             name=request.POST["name"]
             email=request.POST["email"]
+            number=request.POST["number"]
             message=request.POST["interest"]
-            return render(request,"contact.html",{"n_value":name,"e_value":email,"m_value":message,"error":""})
-    return render(request,"contact.html")
+            msg="Data Hasn't Been Submitted Yet !"
+            return render(request,"contact.html",{"data":data,"n_value":name,"e_value":email,"m_value":message,"nu_value":number,"message":msg})
+    elif request.method=="GET":
+        return render(request,"contact.html")
+    
 # Create your views here.
