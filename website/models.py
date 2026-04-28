@@ -17,3 +17,6 @@ class user_data(models.Model):
     email=models.EmailField()
     contact=models.CharField(max_length=10)
     message=models.CharField(max_length=500)
+
+    def __str__(self):
+        return f"User Name Is {self.name}"

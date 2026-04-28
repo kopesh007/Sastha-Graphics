@@ -69,20 +69,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'web_app.wsgi.application'
 
-
+import dj_database_url
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':"sastha",
-        'USER':'root',
-        'PASSWORD':'kopeshdb',
-        'HOST':'localhost',
-        'PORT':'3306',
+    'default': dj_database_url.parse("postgresql://mydb_amcw_user:T5vYBLAUECh22HN4E1JB1mwiRwL4laHE@dpg-d7ee56cvikkc73enoqb0-a.oregon-postgres.render.com/mydb_amcw")
     }
-}
+
 
 
 # Password validation
