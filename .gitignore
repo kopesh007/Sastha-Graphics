@@ -1,0 +1,16 @@
+# Environments
+.env
+virtual/
+venv/
+env/
+
+# Database
+db.sqlite3
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Static and Media
+staticfiles/
+media/

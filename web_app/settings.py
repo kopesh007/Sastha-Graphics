@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-k%-+i(6e3g47)r(bwxzitl2ya(4&1rzt)$@nti)oyrqh1@55is'
+SECRET_KEY = os.getenv("SK")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,9 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,9 +76,11 @@ import dj_database_url
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+k=os.getenv("DB")
+
 DATABASES = {
-    'default': dj_database_url.parse("postgresql://mydb_amcw_user:T5vYBLAUECh22HN4E1JB1mwiRwL4laHE@dpg-d7ee56cvikkc73enoqb0-a.oregon-postgres.render.com/mydb_amcw")
-    }
+    'default': dj_database_url.parse(k, ssl_require=True)
+}
 
 
 
