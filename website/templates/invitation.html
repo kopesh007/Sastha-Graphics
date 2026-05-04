@@ -17,7 +17,7 @@
             {% for i in data %}
             <div class="portfolio-card fade-up" style="animation-delay: 0.{{ forloop.counter0 }}s;">
                 <div class="card-image-placeholder">
-                    <img src="/media/{{i.imageurl}}" alt="{{ i.name }}">
+                    <img src="{{i.imageurl.url}}" alt="{{ i.name }}">
                 </div>
                 <div class="portfolio-content">
                     <h3>{{i.name}}</h3>
