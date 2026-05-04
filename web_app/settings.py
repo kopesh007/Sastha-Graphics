@@ -37,7 +37,14 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv("isec"),
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 
 # Application definition
@@ -48,9 +55,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
-    'django.contrib.staticfiles',
     'website',
 ]
 MIDDLEWARE = [
