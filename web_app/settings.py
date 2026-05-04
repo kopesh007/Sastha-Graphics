@@ -31,11 +31,13 @@ DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
 
-CLOUDIDANRY_STORAGE = {
-    'CLOUD_NAME':os.getenv("in"),
-    'API_KEY':os.getenv("iapi"),
-    'API_SECURITY':os.getenv("isec"),
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv("in"),
+    'API_KEY': os.getenv("iapi"),
+    'API_SECRET': os.getenv("isec"),
 }
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # Application definition
