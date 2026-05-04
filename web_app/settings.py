@@ -31,6 +31,13 @@ DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
 
+CLOUDIDANRY_STORAGE = {
+    'CLOUD_NAME':os.getenv("in"),
+    'API_KEY':os.getenv("iapi"),
+    'API_SECURITY':os.getenv("isec"),
+}
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.staticfiles',
     'website',
 ]
